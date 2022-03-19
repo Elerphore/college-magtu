@@ -13,22 +13,20 @@ class MainWindow {
 
     @Composable fun renderMain(
         text: String,
-        onChangeText: (String) -> Unit
+        showReport: Boolean = false,
+        onChangeText: (String) -> Unit,
+        onChangeReport: (Boolean) -> Unit,
     ) {
         MaterialTheme {
             Column(Modifier.fillMaxWidth().padding(top = 30.dp), Arrangement.spacedBy(10.dp), Alignment.CenterHorizontally) {
-                renderMainInputs(text, onChangeText)
+                renderMainInputs(
+                    text = text,
+                    showReport = showReport,
+                    onChangeText = onChangeText,
+                    onChangeReport = onChangeReport
+                )
 
-                val checkedState = remember { mutableStateOf(false) }
-                Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
-                    Checkbox(
-                        checked = checkedState.value,
-                        onCheckedChange = { checkedState.value = it }
-                    )
-                    Text(text = "Добавить приказ")
-                }
-
-                if(checkedState.value) {
+                if(showReport) {
                     renderReport(text, onChangeText)
                 }
 
@@ -48,7 +46,9 @@ class MainWindow {
 
     @Composable private fun renderMainInputs(
         text: String,
+        showReport: Boolean,
         onChangeText: (String) -> Unit,
+        onChangeReport: (Boolean) -> Unit,
         chooser: JFileChooser = JFileChooser()
     ) {
         Column(
@@ -122,6 +122,15 @@ class MainWindow {
                 }
             }
         }
+
+        Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
+            Checkbox(
+                checked = showReport,
+                onCheckedChange = onChangeReport
+            )
+            Text(text = "Добавить приказ")
+        }
+
     }
 
         @Composable private fun renderReport(text: String, onTextFieldChange: (String) -> Unit) {

@@ -28,44 +28,15 @@ class UserInterface(
     @Composable
     @Preview
     private fun renderInputForm() {
-//                        var consumedText by remember { mutableStateOf(0) }
         var text by remember { mutableStateOf("") }
-        this.mainWindow.renderMain(text) { text = it }
-//        val chooser = javax.swing.JFileChooser()
-//
-//        MaterialTheme {
-//                var consumedText by remember { mutableStateOf(0) }
-//                var text by remember { mutableStateOf("") }
-//
-//                Column(Modifier.fillMaxWidth().padding(top = 30.dp), Arrangement.spacedBy(10.dp), Alignment.CenterHorizontally) {
-//                    mainWindow.renderMainInputs(text = text) { text = it }
-//
-//                    val checkedState = remember { mutableStateOf(false) }
-//                    Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
-//                        Checkbox(
-//                            checked = checkedState.value,
-//                            onCheckedChange = { checkedState.value = it }
-//                        )
-//                        Text(text = "Добавить приказ")
-//                    }
-//
-//                    if(checkedState.value) {
-//                        mainWindow.renderReport(text = text) { text = it }
-//                    }
-//
-//                    Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
-//                        Button(
-//                            modifier = Modifier.fillMaxWidth(1.0F),
-//                            onClick = {
-//
-//                            }
-//                        ) {
-//                            Text("Start")
-//                        }
-//                    }
-//                }
-//
-//            }
+        var showReport by remember { mutableStateOf(false) }
+
+        this.mainWindow.renderMain(
+            text = text,
+            showReport = showReport,
+            onChangeText = { text = it },
+            onChangeReport = { showReport = it }
+        )
     }
 
     @Composable
