@@ -6,24 +6,30 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import parser.Parser
 import java.io.File
 import javax.swing.JFileChooser
 
 class MainWindow {
 
-    @Composable fun renderMain(
+    @Composable
+    fun renderMain(
         text: String,
         showReport: Boolean = false,
+        chooser: JFileChooser,
         onChangeText: (String) -> Unit,
         onChangeReport: (Boolean) -> Unit,
+        onChangeFile: (JFileChooser) -> Unit,
     ) {
+
         MaterialTheme {
             Column(Modifier.fillMaxWidth().padding(top = 30.dp), Arrangement.spacedBy(10.dp), Alignment.CenterHorizontally) {
                 renderMainInputs(
                     text = text,
                     showReport = showReport,
+                    chooser = chooser,
                     onChangeText = onChangeText,
-                    onChangeReport = onChangeReport
+                    onChangeReport = onChangeReport,
                 )
 
                 if(showReport) {
@@ -34,7 +40,7 @@ class MainWindow {
                     Button(
                         modifier = Modifier.fillMaxWidth(1.0F),
                         onClick = {
-                            println("executed")
+                            Parser().drawSomeData()
                         }
                     ) {
                         Text("Start")
@@ -44,12 +50,13 @@ class MainWindow {
         }
     }
 
-    @Composable private fun renderMainInputs(
+    @Composable
+    private fun renderMainInputs(
         text: String,
         showReport: Boolean,
+        chooser: JFileChooser,
         onChangeText: (String) -> Unit,
         onChangeReport: (Boolean) -> Unit,
-        chooser: JFileChooser = JFileChooser()
     ) {
         Column(
             Modifier.fillMaxWidth().padding(top = 30.dp),
@@ -101,6 +108,8 @@ class MainWindow {
                 Button(
                     modifier = Modifier.fillMaxWidth().fillMaxWidth(0.4F),
                     onClick = {
+
+
                         chooser.apply {
                             val state = showSaveDialog(null)
                             val file: File? = this.selectedFile
@@ -133,7 +142,8 @@ class MainWindow {
 
     }
 
-        @Composable private fun renderReport(text: String, onTextFieldChange: (String) -> Unit) {
+        @Composable
+        private fun renderReport(text: String, onTextFieldChange: (String) -> Unit) {
             Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
                 TextField(
                     label = { Text("Приказ") },

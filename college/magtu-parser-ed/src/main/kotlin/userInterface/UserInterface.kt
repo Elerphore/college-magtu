@@ -30,12 +30,15 @@ class UserInterface(
     private fun renderInputForm() {
         var text by remember { mutableStateOf("") }
         var showReport by remember { mutableStateOf(false) }
+        var chooser by remember { mutableStateOf(JFileChooser()) }
 
         this.mainWindow.renderMain(
             text = text,
             showReport = showReport,
+            chooser = chooser,
             onChangeText = { text = it },
-            onChangeReport = { showReport = it }
+            onChangeReport = { showReport = it },
+            onChangeFile = { chooser = it }
         )
     }
 
