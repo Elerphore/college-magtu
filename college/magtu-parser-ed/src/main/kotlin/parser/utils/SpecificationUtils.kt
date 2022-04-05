@@ -7,7 +7,7 @@ class SpecificationUtils : Parsing {
     override fun parse(sheet: Sheet) {
         sheet.getRow(0)
             .forEach { cell ->
-//                println("row: ${cell.address.row} column: ${cell.address.column} value: ${cell.stringCellValue}")
+//                if(cell.dateCellValue != null) println("row: ${cell.address.row} column: ${cell.address.column} value: ${cell.dateCellValue}")
             }
     }
 }
