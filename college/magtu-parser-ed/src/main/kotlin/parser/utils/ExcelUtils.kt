@@ -2,6 +2,7 @@ package parser.utils
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import parser.Report
+import java.util.Date
 
 class ExcelUtils {
     fun renderNumericData(fact: XSSFWorkbook, report: Report) =
@@ -13,7 +14,12 @@ class ExcelUtils {
                 .createRow(index)
                 .getCell(0)
                 .apply {
-                    this.setCellValue(rowConstant)
+                    when(rowConstant) {
+                        (rowConstant is String) -> { this.setCellValue(rowConstant as? String) }
+                        (rowConstant is Int?) -> { this.setCellValue(rowConstant) }
+                        (rowConstant is Date?) -> { this.setCellValue(rowConstant) }
+                        (rowConstant is Boolean?) -> { this.setCellValue(rowConstant) }
+                    }
                 }
         }
 
