@@ -1,8 +1,7 @@
 package parser.utils
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import parser.Report
-import java.util.Date
+import data.Report
 
 class ExcelUtils {
     fun renderNumericData(fact: XSSFWorkbook, report: Report) =

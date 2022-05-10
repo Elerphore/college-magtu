@@ -25,7 +25,6 @@ class MainWindow {
         MaterialTheme {
             Column(Modifier.fillMaxWidth().padding(top = 30.dp), Arrangement.spacedBy(10.dp), Alignment.CenterHorizontally) {
                 renderMainInputs(
-                    text = text,
                     showReport = showReport,
                     chooser = chooser,
                     onChangeReport = onChangeReport,
@@ -40,9 +39,7 @@ class MainWindow {
                 Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
                     Button(
                         modifier = Modifier.fillMaxWidth(1.0F),
-                        onClick = {
-                            Parser().renderExcelFile()
-                        }
+                        onClick = { Parser().renderExcelFile(dataFile) }
                     ) {
                         Text("Start")
                     }
@@ -53,7 +50,6 @@ class MainWindow {
 
     @Composable
     private fun renderMainInputs(
-        text: String,
         showReport: Boolean,
         chooser: JFileChooser,
         onChangeReport: (Boolean) -> Unit,
@@ -85,10 +81,7 @@ class MainWindow {
                             val state = showSaveDialog(null)
                             onDataFileChange(this.selectedFile)
 
-//                            println(this.selectedFile)
-//                            println(dataFile.name)
-
-                            dataFile.let {
+                            this.selectedFile.let {
                                 currentJsonDataFileName = it.name
                             }
 

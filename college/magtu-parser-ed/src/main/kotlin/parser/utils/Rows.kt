@@ -1,6 +1,6 @@
 package parser.utils
 
-import parser.Report
+import data.Report
 
 class Rows(report: Report) {
     val report: Report = report;

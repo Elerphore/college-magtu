@@ -29,7 +29,6 @@ class UserInterface(
             dataFile = dataFile,
             onDataFileChange = { file ->
                 dataFile = file
-                println(dataFile.name)
             },
         )
     }
