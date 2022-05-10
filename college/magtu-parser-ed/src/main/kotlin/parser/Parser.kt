@@ -7,10 +7,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
 import java.io.FileOutputStream
-import java.io.OutputStream
-import java.time.LocalDate
-import java.time.OffsetDateTime
-import java.util.Date
 
 data class Report(
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "DD.MM.YYYY")
@@ -61,7 +57,7 @@ class Parser {
     val sheet = fact.createSheet()
     val parsedFile = File("/home/elerphore/ready_table.xlsx")
 
-    fun drawSomeData() {
+    fun renderExcelFile() {
         val jsFile = File("/home/elerphore/students.json")
 
         jsFile.readText().let {

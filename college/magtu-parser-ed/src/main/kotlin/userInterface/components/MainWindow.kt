@@ -19,17 +19,18 @@ class MainWindow {
         chooser: JFileChooser,
         onChangeText: (String) -> Unit,
         onChangeReport: (Boolean) -> Unit,
-        onChangeFile: (JFileChooser) -> Unit,
+        dataFile: File,
+        onDataFileChange: (File) -> Unit,
     ) {
-
         MaterialTheme {
             Column(Modifier.fillMaxWidth().padding(top = 30.dp), Arrangement.spacedBy(10.dp), Alignment.CenterHorizontally) {
                 renderMainInputs(
                     text = text,
                     showReport = showReport,
                     chooser = chooser,
-                    onChangeText = onChangeText,
                     onChangeReport = onChangeReport,
+                    dataFile = dataFile,
+                    onDataFileChange = onDataFileChange
                 )
 
                 if(showReport) {
@@ -40,7 +41,7 @@ class MainWindow {
                     Button(
                         modifier = Modifier.fillMaxWidth(1.0F),
                         onClick = {
-                            Parser().drawSomeData()
+                            Parser().renderExcelFile()
                         }
                     ) {
                         Text("Start")
@@ -55,51 +56,62 @@ class MainWindow {
         text: String,
         showReport: Boolean,
         chooser: JFileChooser,
-        onChangeText: (String) -> Unit,
         onChangeReport: (Boolean) -> Unit,
+        dataFile: File,
+        onDataFileChange: (File) -> Unit,
     ) {
         Column(
             Modifier.fillMaxWidth().padding(top = 30.dp),
             Arrangement.spacedBy(10.dp),
             Alignment.CenterHorizontally,
         ) {
+
             Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
+                var currentJsonDataFileName by remember { mutableStateOf("") }
+
                 TextField(
-                    label = { Text("Отделение") },
-                    modifier = Modifier.fillMaxWidth(),
-                    value = text,
-                    onValueChange = onChangeText,
+                    label = { Text("Текущие данные") },
+                    modifier = Modifier.fillMaxWidth(0.6F),
+                    value = currentJsonDataFileName,
+                    readOnly = true,
+                    onValueChange = { },
                     singleLine = true
                 )
+
+                Button(
+                    modifier = Modifier.fillMaxWidth().fillMaxWidth(0.4F),
+                    onClick = {
+                        chooser.apply {
+                            val state = showSaveDialog(null)
+                            onDataFileChange(this.selectedFile)
+
+//                            println(this.selectedFile)
+//                            println(dataFile.name)
+
+                            dataFile.let {
+                                currentJsonDataFileName = it.name
+                            }
+
+                            when(state) {
+                                JFileChooser.APPROVE_OPTION -> println("APPROVE_OPTION")
+                                JFileChooser.CANCEL_OPTION -> println("CANCEL_OPTION")
+                                JFileChooser.ERROR_OPTION -> println("ERROR_OPTION")
+                            }
+                        }
+
+                    },
+                ) {
+                    Text("Choose")
+                }
             }
 
             Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
-                TextField(
-                    label = { Text("Группа") },
-                    modifier = Modifier.fillMaxWidth(),
-                    value = text,
-                    onValueChange = onChangeText,
-                    singleLine = true
-                )
-            }
-
-            Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
-                TextField(
-                    label = { Text("Приказ") },
-                    modifier = Modifier.fillMaxWidth(1.0F),
-                    value = text,
-                    onValueChange = onChangeText,
-                    singleLine = true
-                )
-            }
-
-            Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
-                var textField by remember { mutableStateOf("") }
+                var previouseExcelFileName by remember { mutableStateOf("") }
 
                 TextField(
                     label = { Text("Прошлая таблица") },
                     modifier = Modifier.fillMaxWidth(0.6F),
-                    value = textField,
+                    value = previouseExcelFileName,
                     readOnly = true,
                     onValueChange = { },
                     singleLine = true
@@ -115,7 +127,7 @@ class MainWindow {
                             val file: File? = this.selectedFile
 
                             file?.let {
-                                textField = it.name
+                                previouseExcelFileName = it.name
                             }
 
                             when(state) {

@@ -16,9 +16,10 @@ class ExcelUtils {
                 .apply {
                     when(rowConstant) {
                         (rowConstant is String) -> { this.setCellValue(rowConstant as? String) }
-                        (rowConstant is Int?) -> { this.setCellValue(rowConstant) }
-                        (rowConstant is Date?) -> { this.setCellValue(rowConstant) }
-                        (rowConstant is Boolean?) -> { this.setCellValue(rowConstant) }
+//                        (rowConstant is Int?) -> { this.setCellValue(rowConstant) }
+//                        (rowConstant is Date?) -> { this.setCellValue(rowConstant) }
+//                        (rowConstant is Boolean?) -> { this.setCellValue(rowConstant) }
+                        else -> println("not string")
                     }
                 }
         }
