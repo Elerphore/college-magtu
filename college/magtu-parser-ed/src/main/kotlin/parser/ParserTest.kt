@@ -20,6 +20,6 @@ internal class ParserTest {
     fun drawSomeData() =
         File("/home/elerphore/students.json")
             .let {jsFile -> mapper.readValue<Report>(jsFile.readText()) }
-            .let { excelUtils.renderNumericData(fact, it) }
+//            .let { excelUtils.renderNumericData(fact, it) }
 
 }

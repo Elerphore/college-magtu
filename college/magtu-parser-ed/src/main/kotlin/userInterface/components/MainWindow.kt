@@ -59,7 +59,6 @@ class MainWindow {
             Arrangement.spacedBy(10.dp),
             Alignment.CenterHorizontally,
         ) {
-
             Row(Modifier.fillMaxWidth(0.9F), Arrangement.spacedBy(10.dp), Alignment.CenterVertically) {
                 var currentJsonDataFileName by remember { mutableStateOf("") }
 
@@ -81,12 +80,6 @@ class MainWindow {
 
                             this.selectedFile.let {
                                 currentJsonDataFileName = it.name
-                            }
-
-                            when(state) {
-                                JFileChooser.APPROVE_OPTION -> println("APPROVE_OPTION")
-                                JFileChooser.CANCEL_OPTION -> println("CANCEL_OPTION")
-                                JFileChooser.ERROR_OPTION -> println("ERROR_OPTION")
                             }
                         }
 
@@ -111,20 +104,12 @@ class MainWindow {
                 Button(
                     modifier = Modifier.fillMaxWidth().fillMaxWidth(0.4F),
                     onClick = {
-
-
                         chooser.apply {
                             val state = showSaveDialog(null)
                             val file: File? = this.selectedFile
 
                             file?.let {
                                 previouseExcelFileName = it.name
-                            }
-
-                            when(state) {
-                                JFileChooser.APPROVE_OPTION -> println("APPROVE_OPTION")
-                                JFileChooser.CANCEL_OPTION -> println("CANCEL_OPTION")
-                                JFileChooser.ERROR_OPTION -> println("ERROR_OPTION")
                             }
                         }
 

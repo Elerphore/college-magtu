@@ -5,6 +5,7 @@ import com.fasterxml.jackson.module.kotlin.*
 import data.Report
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import parser.utils.ExcelUtils
 import java.io.File
 import java.io.FileOutputStream
 
@@ -12,12 +13,11 @@ class Parser {
     val mapper = jacksonObjectMapper().apply { this.registerKotlinModule(); this.registerModule(JavaTimeModule()); }
     val fact = XSSFWorkbook()
     val sheet = fact.createSheet()
-    val parsedFile = File("/home/elerphore/ready_table.xlsx")
+    val parsedFile = File("${System.getProperty("user.dir")}/ready_table.xlsx")
+    val excelUtils: ExcelUtils = ExcelUtils()
 
     fun renderExcelFile(dataFile: File) {
-        val jsFile = File("/home/elerphore/students.json")
-
-        jsFile.readText().let {
+        dataFile.readText().let {
             val report = mapper.readValue<Report>(it)
 
             generateTable(sheet, report)
@@ -27,10 +27,6 @@ class Parser {
     }
 
     private fun generateTable(sheet: XSSFSheet, report: Report) : XSSFSheet {
-        val row = sheet.createRow(0)
-        val column = row.createCell(0)
-
-        column.setCellValue(report.date)
-        return sheet
+        return excelUtils.renderNumericData(sheet, report)
     }
 }

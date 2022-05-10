@@ -15,7 +15,7 @@ class UserInterface(
     private fun renderInputForm() {
         var text by remember { mutableStateOf("") }
         var showReport by remember { mutableStateOf(false) }
-        var chooser by remember { mutableStateOf(JFileChooser()) }
+        val chooser by remember { mutableStateOf(JFileChooser()) }
         var dataFile by remember { mutableStateOf(File("")) }
 
         this.mainWindow.renderMain(
