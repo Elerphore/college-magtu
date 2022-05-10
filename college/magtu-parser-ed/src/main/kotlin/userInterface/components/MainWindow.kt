@@ -28,7 +28,6 @@ class MainWindow {
                     showReport = showReport,
                     chooser = chooser,
                     onChangeReport = onChangeReport,
-                    dataFile = dataFile,
                     onDataFileChange = onDataFileChange
                 )
 
@@ -53,7 +52,6 @@ class MainWindow {
         showReport: Boolean,
         chooser: JFileChooser,
         onChangeReport: (Boolean) -> Unit,
-        dataFile: File,
         onDataFileChange: (File) -> Unit,
     ) {
         Column(

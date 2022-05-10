@@ -10,8 +10,6 @@ import javax.swing.JFileChooser
 class UserInterface(
     val mainWindow: MainWindow
 ) {
-
-    @OptIn(ExperimentalComposeUiApi::class)
     @Composable
     @Preview
     private fun renderInputForm() {
