@@ -7,13 +7,28 @@ import org.apache.poi.xssf.usermodel.XSSFSheet
 import java.util.*
 
 class ExcelUtils {
-    fun renderNumericData(fact: XSSFSheet, report: Report): XSSFSheet =
-        Rows(report).let { rows -> for(index in 0..16) renderRow(fact, rows.getRowConstants(index), index) }.let { fact }
+    fun renderNumericData(fact: XSSFSheet, report: Report): XSSFSheet {
+        for(indexDepartment in report.course!!.deps.indices) {
+            for(indexGroup in report.course!!.deps[indexDepartment].groups.indices) {
+                Rows(report).let { rows -> for(index in 0..16)
+                    renderRow(
+                        fact,
+                        rows.getRowConstants(index, indexDepartment, indexGroup),
+                        indexDepartment,
+                        indexGroup,
+                        index
+                    )
+                }
+            }
+        }
 
-    private fun renderRow(fact: XSSFSheet, rowConstant: Any?, index: Int): XSSFSheet =
+        return fact
+    }
+
+    private fun renderRow(fact: XSSFSheet, rowConstant: Any?, indexDepartment: Int, indexGroup: Int, index: Int): XSSFSheet =
         fact.apply {
-            createRow(index)
-                .createCell(0)?.apply {
+            (getRow((indexDepartment * 18) + (index)) ?: createRow((indexDepartment * 18) + (index)))
+                .createCell(indexGroup * 3)?.apply {
                     when(rowConstant) {
                         is String -> { setCellValue(rowConstant) }
                         is Int -> { setCellValue(rowConstant.toDouble()) }
