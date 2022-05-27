@@ -26,4 +26,26 @@ class Rows(report: Report, ) {
             16 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].count }
             else -> { "nothing" }
         }
+
+    fun getRowTitles(index: Int): Any =
+        when(index) {
+            0 -> { "number" }
+            1 -> { "code" }
+            2 -> { "newStudents" }
+            3 -> { "recovered" }
+            4 -> { "newStudentsFromDifferentAcademies" }
+            5 -> { "newStudentsFromDifferentSpecialities" }
+            6 -> { "failedFinalExam" }
+            7 -> { "finishedStudy" }
+            8 -> { "goneStudentsToDifferentAcademies" }
+            9 -> { "goneStudentsToDifferentSpecialities" }
+            10 -> { "interruptingDocumentConditions" }
+            11 -> { "academyHoliday" }
+            12 -> { "childrenHoliday" }
+            13 -> { "armyCalled" }
+            14 -> { "mans" }
+            15 -> { "countOfChildren" }
+            16 -> { "count" }
+            else -> { "nothing" }
+        }
 }

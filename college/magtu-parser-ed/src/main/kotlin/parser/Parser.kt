@@ -5,6 +5,7 @@ import com.fasterxml.jackson.module.kotlin.*
 import data.Report
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import parser.utils.CellStyler
 import parser.utils.ExcelUtils
 import java.io.File
 import java.io.FileOutputStream
@@ -14,7 +15,7 @@ class Parser {
     val fact = XSSFWorkbook()
     val sheet = fact.createSheet()
     val parsedFile = File("${System.getProperty("user.dir")}/ready_table.xlsx")
-    val excelUtils: ExcelUtils = ExcelUtils()
+    val excelUtils: ExcelUtils = ExcelUtils(CellStyler(fact))
 
     fun renderExcelFile(dataFile: File) {
         dataFile.readText().let {
