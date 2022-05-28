@@ -6,11 +6,12 @@ import org.apache.poi.xssf.usermodel.XSSFCell
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import java.util.*
 
-class ExcelUtils(styles: CellStyler) {
-    val styles = styles
+class ExcelUtils(
+        private val styles: CellStyler
+    ) {
     fun renderNumericData(fact: XSSFSheet, report: Report): XSSFSheet {
         for(indexDepartment in report.course!!.deps.indices) {
-            for(indexGroup in report.course!!.deps[indexDepartment].groups.indices) {
+            for(indexGroup in report.course.deps[indexDepartment].groups.indices) {
                 Rows(report).let { rows ->
                     for(index in 0..16) {
                         renderRow(

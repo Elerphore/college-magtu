@@ -25,9 +25,7 @@ class UserInterface(
             onChangeText = { text = it },
             onChangeReport = { showReport = it },
             dataFile = dataFile,
-            onDataFileChange = { file ->
-                dataFile = file
-            },
+            onDataFileChange = { file -> dataFile = file },
         )
     }
 

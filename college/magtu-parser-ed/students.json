@@ -504,8 +504,591 @@
 							"finishedStudy": 5
 						}
 					}
+				]			
+			},
+						{
+				"code": "08.02.01",
+				"groups": [
+					{
+						"name": "С-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "Ш-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "П-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					}
 				]
-			
+			},
+			{
+				
+				"code": "08.02.01",
+				"groups": [
+					{
+						"name": "С-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "Ш-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "П-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					}
+				]			
+			},
+			{
+				
+				"code": "08.02.01",
+				"groups": [
+					{
+						"name": "С-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "Ш-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "П-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					},
+					{
+						"name": "H-21-1",
+						"count": {
+							"free": 10,
+							"paid": 10
+						},
+						"holidaySection":{
+							"countOfChildren": 10,
+							"mans": 5,
+							"academyHoliday": 5,
+							"childrenHoliday": 5,
+							"armyCalled": 5	
+						},
+						"comeSection": {
+							"newStudents": 5,
+							"newStudentsFromDifferentAcademies": 5,
+							"newStudentsFromDifferentSpecialities": 5,
+							"recovered": 5
+						},
+						"excludeSection": {
+							"goneStudentsToDifferentAcademies": 5,
+							"goneStudentsToDifferentSpecialities": 5,							
+							"interruptingDocumentConditions": 5,
+							"failedFinalExam": 5,
+							"finishedStudy": 5
+						}
+					}
+				]			
 			}
 		]
 	}
