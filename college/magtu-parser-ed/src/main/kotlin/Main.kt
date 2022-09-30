@@ -1,19 +1,11 @@
-// Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import userInterface.UserInterface
-import userInterface.components.MainWindow
 import java.awt.Dimension
 
 fun main() = application {
-    val mainWindow = MainWindow()
-
-    Window(
-        onCloseRequest = ::exitApplication,
-    ) {
+    Window(title = "Отчётная система МПК", onCloseRequest = ::exitApplication) {
         this.window.size = Dimension(1000, 650)
-        UserInterface(
-            mainWindow = mainWindow
-        ).render()
+        UserInterface().render()
     }
 }
