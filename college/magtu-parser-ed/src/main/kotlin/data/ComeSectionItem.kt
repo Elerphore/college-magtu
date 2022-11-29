@@ -1,6 +1,6 @@
 package data
 
-data class ComeSection(
+data class ComeSectionItem(
     val newStudents: Int? = null,
     val newStudentsFromDifferentAcademies: Int? = null,
     val newStudentsFromDifferentSpecialities: Int? = null,

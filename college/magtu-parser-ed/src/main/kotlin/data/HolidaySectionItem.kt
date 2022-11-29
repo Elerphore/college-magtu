@@ -1,6 +1,6 @@
 package data
 
-data class HolidaySection(
+data class HolidaySectionItem(
     val countOfChildren: Int? = null,
     val mans: Int? = null,
     val academyHoliday: Int? = null,

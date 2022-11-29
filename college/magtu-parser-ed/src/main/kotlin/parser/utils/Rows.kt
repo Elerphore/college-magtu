@@ -1,29 +1,27 @@
 package parser.utils
 
-import data.Report
+import data.ReportItem
 
-class Rows(report: Report, ) {
-    val report: Report = report
-
+class Rows(private val reportItem: ReportItem) {
     fun getRowConstants(index: Int, deparmentIndex: Int, groupIndex: Int): Any? =
         when(index) {
-            0 -> { report.course!!.number }
-            1 -> { report.course!!.deps[deparmentIndex].code }
-            2 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].comeSection!!.newStudents }
-            3 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].comeSection!!.recovered }
-            4 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].comeSection!!.newStudentsFromDifferentAcademies }
-            5 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].comeSection!!.newStudentsFromDifferentSpecialities }
-            6 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].excludeSection!!.failedFinalExam }
-            7 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].excludeSection!!.finishedStudy }
-            8 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].excludeSection!!.goneStudentsToDifferentAcademies }
-            9 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].excludeSection!!.goneStudentsToDifferentSpecialities }
-            10 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].excludeSection!!.interruptingDocumentConditions }
-            11 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].holidaySection!!.academyHoliday }
-            12 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].holidaySection!!.childrenHoliday }
-            13 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].holidaySection!!.armyCalled }
-            14 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].holidaySection!!.mans }
-            15 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].holidaySection!!.countOfChildren }
-            16 -> { report.course!!.deps[deparmentIndex].groups[groupIndex].count }
+            0 -> { reportItem.courseItem!!.number }
+            1 -> { reportItem.courseItem!!.deps[deparmentIndex].code }
+            2 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudents }
+            3 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.recovered }
+            4 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudentsFromDifferentAcademies }
+            5 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudentsFromDifferentSpecialities }
+            6 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.failedFinalExam }
+            7 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.finishedStudy }
+            8 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.goneStudentsToDifferentAcademies }
+            9 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.goneStudentsToDifferentSpecialities }
+            10 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.interruptingDocumentConditions }
+            11 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.academyHoliday }
+            12 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.childrenHoliday }
+            13 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.armyCalled }
+            14 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.mans }
+            15 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.countOfChildren }
+            16 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].countItem }
             else -> { "nothing" }
         }
 

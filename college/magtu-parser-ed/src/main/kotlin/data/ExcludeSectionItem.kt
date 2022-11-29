@@ -1,6 +1,6 @@
 package data
 
-data class ExcludeSection(
+data class ExcludeSectionItem(
     val goneStudentsToDifferentAcademies: Int? = null,
     val goneStudentsToDifferentSpecialities: Int? = null,
     val interruptingDocumentConditions: Int? = null,
