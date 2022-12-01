@@ -1,29 +1,29 @@
 package parser.utils
 
-import data.ReportItem
+import data.Report
 
-class Rows(private val reportItem: ReportItem) {
-    fun getRowConstants(index: Int, deparmentIndex: Int, groupIndex: Int): Any? =
-        when(index) {
-            0 -> { reportItem.courseItem!!.number }
-            1 -> { reportItem.courseItem!!.deps[deparmentIndex].code }
-            2 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudents }
-            3 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.recovered }
-            4 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudentsFromDifferentAcademies }
-            5 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudentsFromDifferentSpecialities }
-            6 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.failedFinalExam }
-            7 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.finishedStudy }
-            8 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.goneStudentsToDifferentAcademies }
-            9 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.goneStudentsToDifferentSpecialities }
-            10 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.interruptingDocumentConditions }
-            11 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.academyHoliday }
-            12 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.childrenHoliday }
-            13 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.armyCalled }
-            14 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.mans }
-            15 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.countOfChildren }
-            16 -> { reportItem.courseItem!!.deps[deparmentIndex].groups[groupIndex].countItem }
-            else -> { "nothing" }
-        }
+class Rows(private val report: Report) {
+//    fun getRowConstants(index: Int, deparmentIndex: Int, groupIndex: Int): Any? =
+//        when(index) {
+//            0 -> { report.courseItem!!.number }
+//            1 -> { report.courseItem!!.deps[deparmentIndex].code }
+//            2 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudents }
+//            3 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.recovered }
+//            4 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudentsFromDifferentAcademies }
+//            5 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].comeSectionItem!!.newStudentsFromDifferentSpecialities }
+//            6 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.failedFinalExam }
+//            7 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.finishedStudy }
+//            8 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.goneStudentsToDifferentAcademies }
+//            9 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.goneStudentsToDifferentSpecialities }
+//            10 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].excludeSectionItem!!.interruptingDocumentConditions }
+//            11 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.academyHoliday }
+//            12 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.childrenHoliday }
+//            13 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.armyCalled }
+//            14 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.mans }
+//            15 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].holidaySectionItem!!.countOfChildren }
+//            16 -> { report.courseItem!!.deps[deparmentIndex].groups[groupIndex].countItem }
+//            else -> { "nothing" }
+//        }
 
     fun getRowTitles(index: Int): Any =
         when(index) {

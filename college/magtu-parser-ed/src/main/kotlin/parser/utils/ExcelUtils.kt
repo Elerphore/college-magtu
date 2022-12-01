@@ -1,6 +1,6 @@
 package parser.utils
 
-import data.ReportItem
+import data.Report
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
@@ -13,30 +13,34 @@ object ExcelUtils {
     private val styles = CellStyler(fact)
     private val parsedFile = File("${System.getProperty("user.dir")}/ready_table.xlsx")
 
-    fun renderNumericData(reportItem: ReportItem): XSSFSheet {
-        for(indexDepartment in reportItem.courseItem!!.deps.indices) {
-            for(indexGroup in reportItem.courseItem.deps[indexDepartment].groups.indices) {
-                Rows(reportItem).let { rows ->
-                    for(index in 0..16) {
-                        renderRow(
-                            rows.getRowTitles(index),
-                            indexDepartment,
-                            indexGroup,
-                            index,
-                            true,
-                        )
+    fun renderTableTitle(report: Report) {
 
-                        renderRow(
-                            rowConstant = rows.getRowConstants(index, indexDepartment, indexGroup),
-                            indexDepartment = indexDepartment,
-                            indexGroup = indexGroup,
-                            index = index,
-                            isTitle = false,
-                        )
-                    }
-                }
-            }
-        }
+    }
+
+    fun renderNumericData(report: Report): XSSFSheet {
+//        for(indexDepartment in report.courseItem!!.deps.indices) {
+//            for(indexGroup in report.courseItem.deps[indexDepartment].groups.indices) {
+//                Rows(report).let { rows ->
+//                    for(index in 0..16) {
+//                        renderRow(
+//                            rows.getRowTitles(index),
+//                            indexDepartment,
+//                            indexGroup,
+//                            index,
+//                            true,
+//                        )
+//
+//                        renderRow(
+//                            rowConstant = rows.getRowConstants(index, indexDepartment, indexGroup),
+//                            indexDepartment = indexDepartment,
+//                            indexGroup = indexGroup,
+//                            index = index,
+//                            isTitle = false,
+//                        )
+//                    }
+//                }
+//            }
+//        }
         return sheet
     }
 
