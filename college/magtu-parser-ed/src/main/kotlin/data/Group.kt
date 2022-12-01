@@ -37,4 +37,5 @@ data class Group(
     val finished: CategoryInformation,
     @JsonAlias("other")
     val other: CategoryInformation,
+
 )

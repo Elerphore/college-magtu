@@ -20,8 +20,7 @@ object Parser {
             val report = mapper.readValue<Report>(it)
 
             ExcelUtils.renderNumericData(report)
-
-//            ExcelUtils.write()
+            ExcelUtils.write()
         }
 
 }
