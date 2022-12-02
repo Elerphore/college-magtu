@@ -18,36 +18,37 @@ object ExcelUtils {
     private val sheet: XSSFSheet = fact.createSheet()
     private val styles = CellStyler(fact)
     private val parsedFile = File("${System.getProperty("user.dir")}/ready_table.xlsx")
-    private val lastRowTable = 0
+    private var lastRowTable: Int = 0
 
     private fun renderTableTitle(report: Report) =
         with(sheet) {
-            with(getRow(0) ?: createRow(0)) { with(createCell(2)) { setCellValue(report.date); cellStyle.alignment = HorizontalAlignment.CENTER } }
-            with(getRow(1) ?: createRow(1)) { with(createCell(0)) { setCellValue(report.courseDescription); cellStyle.alignment = HorizontalAlignment.CENTER } }
+            with(getRow(0 + lastRowTable) ?: createRow(0 + lastRowTable)) { with(createCell(2)) { setCellValue(report.date); cellStyle.alignment = HorizontalAlignment.CENTER } }
+            with(getRow(1 + lastRowTable) ?: createRow(1 + lastRowTable)) { with(createCell(0)) { setCellValue(report.courseDescription); cellStyle.alignment = HorizontalAlignment.CENTER } }
         }
 
     private fun renderPrefixInfoColumns(report: Report) =
         with(sheet) {
-            with(getRow(2) ?: createRow(2)) {
+            with(getRow(2 + lastRowTable) ?: createRow(2 + lastRowTable)) {
                 with(createCell(0)) { setCellValue("№"); cellStyle.alignment = HorizontalAlignment.CENTER }
                 with(createCell(1)) { setCellValue("Показатели"); cellStyle.alignment = HorizontalAlignment.CENTER }
                 with(createCell(3)) { setCellValue(report.courseName); cellStyle.alignment = HorizontalAlignment.CENTER }
             }
-            addMergedRegion(CellRangeAddress.valueOf("A3:A5"))
-            addMergedRegion(CellRangeAddress.valueOf("B3:C5"))
-            addMergedRegion(CellRangeAddress(2, 2, 3, (report.globalGroup.size) * 4 + 2))
+            addMergedRegion(CellRangeAddress(2 + lastRowTable, 2 + lastRowTable + 2, 0, 0))
+
+            addMergedRegion(CellRangeAddress(2 + lastRowTable, 2 + lastRowTable + 2, 1, 2))
+            addMergedRegion(CellRangeAddress(2 + lastRowTable, 2 + lastRowTable, 3, (report.globalGroup.size) * 4 + 2))
         }
 
     private fun renderGeneralGroup(report: Report) =
         with(sheet) {
-            with(createRow(3)) {
+            with(createRow(3 + lastRowTable)) {
                 var lastRenderedCell: Int? = null
                 report.globalGroup.forEachIndexed { index, globalGroup ->
                     val cellIndex: Int = if(lastRenderedCell == null) 3 + index else lastRenderedCell!! + 1
 
                     lastRenderedCell = 3 + cellIndex
 
-                    addMergedRegion(CellRangeAddress(3, 3, cellIndex, lastRenderedCell!!))
+                    addMergedRegion(CellRangeAddress(3 + lastRowTable, 3 + lastRowTable, cellIndex, lastRenderedCell!!))
                     with(createCell(cellIndex)) { setCellValue(globalGroup.code) }
                 }
             }
@@ -55,7 +56,7 @@ object ExcelUtils {
 
     private fun renderGroup(report: Report) =
         with(sheet) {
-            with(createRow(4)) {
+            with(createRow(4 + lastRowTable)) {
                 var lastRenderedCell: Int? = null
                 report.globalGroup.forEachIndexed { globalGroupIndex, globalGroup ->
                     globalGroup.groups.forEachIndexed { groupIndex, group ->
@@ -63,7 +64,7 @@ object ExcelUtils {
 
                         lastRenderedCell = 1 + cellIndex
 
-                        addMergedRegion(CellRangeAddress(4, 4, cellIndex, lastRenderedCell!!))
+                        addMergedRegion(CellRangeAddress(4 + lastRowTable, 4 + lastRowTable, cellIndex, lastRenderedCell!!))
                         with(createCell(cellIndex)) { setCellValue(group.name); cellStyle.alignment = HorizontalAlignment.CENTER }
                     }
                 }
@@ -72,9 +73,9 @@ object ExcelUtils {
 
     private fun renderGroupStudentBudgetOrCommercial(report: Report) =
         with(sheet) {
-            with(createRow(5)) {
+            with(createRow(5 + lastRowTable)) {
 
-                addMergedRegion(CellRangeAddress.valueOf("B6:C6"))
+                addMergedRegion(CellRangeAddress(5 + lastRowTable, 5 + lastRowTable, 1, 2))
                 with(createCell(0)) { cellStyle = styles.cellStyle }
 
                 var lastRenderedCell: Int? = null
@@ -156,10 +157,10 @@ object ExcelUtils {
             Group::class.memberProperties.forEach {
                 val info = getPropertyInformation(it.name) ?: return@forEach
 
-                with((getRow(info.second) ?: createRow(info.second))) {
+                with((getRow(info.second + lastRowTable) ?: createRow(info.second + lastRowTable))) {
                     with(createCell(0)) { setCellValue(info.first.toString()); cellStyle = styles.cellStyle }
                     with(createCell(1)) { setCellValue(info.third) }
-                    addMergedRegion(CellRangeAddress(info.second, info.second, 1, 2))
+                    addMergedRegion(CellRangeAddress(info.second + lastRowTable, info.second + lastRowTable, 1, 2))
                 }
 
             }
@@ -181,7 +182,7 @@ object ExcelUtils {
 
                         val propertyRow = getPropertyRow(member.name)!!
 
-                        with(getRow(propertyRow) ?: createRow(propertyRow)) {
+                        with(getRow(propertyRow + lastRowTable) ?: createRow(propertyRow + lastRowTable)) {
                             with(createCell(cellIndex)) { setCellValue(categoryInformation.budget.toString()); cellStyle = styles.cellStyle }
                             with(createCell(cellIndex + 1)) { setCellValue(categoryInformation.commercial.toString()); cellStyle = styles.cellStyle }
                         }
@@ -208,10 +209,10 @@ object ExcelUtils {
     private fun renderResultData(report: Report) =
         with(sheet) {
             resultFields.forEach { triple ->
-                with(getRow(triple.second) ?: createRow(triple.second)) {
+                with(getRow(triple.second + lastRowTable) ?: createRow(triple.second + lastRowTable)) {
                     with(createCell(0)) { setCellValue(triple.first.toString()); cellStyle = styles.cellStyle }
                     with(createCell(1)) { setCellValue(triple.third) }
-                    addMergedRegion(CellRangeAddress(triple.second, triple.second, 1, 2))
+                    addMergedRegion(CellRangeAddress(triple.second + lastRowTable, triple.second + lastRowTable, 1, 2))
 
                     for(i in 3 .. report.globalGroup.size * 4 + 2) {
                         with(createCell(i)) { setCellValue("0"); cellStyle = styles.cellStyle }
@@ -247,6 +248,8 @@ object ExcelUtils {
             RegionUtil.setBorderRight(BorderStyle.THIN, rangeAddress, sheet)
             RegionUtil.setBorderBottom(BorderStyle.THIN, rangeAddress, sheet)
         }
+
+        lastRowTable += if(lastRowTable < 29 ) 29 + 5 else index + 5
 
         return sheet
     }
