@@ -18,6 +18,7 @@ object ExcelUtils {
     private val sheet: XSSFSheet = fact.createSheet()
     private val styles = CellStyler(fact)
     private val parsedFile = File("${System.getProperty("user.dir")}/ready_table.xlsx")
+    private val lastRowTable = 0
 
     private fun renderTableTitle(report: Report) =
         with(sheet) {
@@ -232,7 +233,7 @@ object ExcelUtils {
             renderResultData(report)
         }
 
-    fun renderNumericData(report: Report): XSSFSheet {
+    fun renderNumericData(report: Report, index: Int): XSSFSheet {
 
         renderTableTitle(report)
         renderTable(report)

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import data.Report
+import data.ReportResponse
 import parser.utils.ExcelUtils
 import java.io.File
 
@@ -17,9 +18,12 @@ object Parser {
 
     fun renderExcelFile(dataFile: File) =
         dataFile.readText().let {
-            val report = mapper.readValue<Report>(it)
+            val reportList = mapper.readValue<ReportResponse>(it)
 
-            ExcelUtils.renderNumericData(report)
+            reportList.items.forEachIndexed { index, report ->
+                ExcelUtils.renderNumericData(report, index)
+            }
+
             ExcelUtils.write()
         }
 
